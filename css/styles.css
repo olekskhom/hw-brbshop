@@ -1,9 +1,15 @@
 /* ========== ROOT ========== */
-/* === FOONT === */
-/* === /FOONT === */
+:root {
+  --main-font: "Open Sans", sans-serif;
+  --secondary-font: "Raleway", sans-serif;
 
-/* === COLOR === */
-/* === /COLOR === */
+  --main-color: #303030;
+  --secondary-color: #555555;
+  --gray-main-color: #9da4bd;
+  --accent-color: #ff6c00;
+
+  --white-color: #ffffff;
+}
 /* ========== /ROOT ========== */
 
 /* ========== RESET ========== */
@@ -21,10 +27,14 @@ ul,
 ol {
   margin: 0;
   padding-left: 0;
+  color: inherit;
+
+  list-style-type: none;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 img {
@@ -33,13 +43,155 @@ img {
 
 button {
   cursor: pointer;
+  color: inherit;
 }
 /* ========== /RESET ========== */
 
 /* ========== COMPONENTS ========== */
+body {
+  font-family: var(--main-font);
+  color: var(--main-color);
+}
+
+.container {
+  outline: 2px solid red;
+  max-width: 448px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    min-width: 720px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    min-width: 1200px;
+  }
+}
 /* ========== /COMPONENTS ========== */
 
 /* ========== HEADER ========== */
+.header-menu-list,
+.header-contacts-tel,
+.header-order-btn {
+  display: none;
+}
+
+.logo-icon {
+  fill: var(--accent-color);
+  /* margin-top: 40px; */
+}
+.mobile-menu-icon {
+  fill: var(--accent-color);
+}
+
+.header-container {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+.mobile-menu-btn {
+  line-height: 0;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.header-box {
+  padding-top: 40px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* tablet */
+@media only screen and (min-width: 768px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  .header-menu-list {
+    display: flex;
+    gap: 24px;
+  }
+
+  .header-order-btn {
+    display: block;
+  }
+
+  .order-btn {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: calc(16 / 12);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+
+    border: 1px solid var(--accent-color);
+    border-radius: 25px;
+    background-color: transparent;
+    padding: 12px 24px;
+
+    transition: background-color 500ms ease;
+  }
+
+  .page-nav {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+  }
+
+  .header-box {
+    padding-top: 32px;
+  }
+
+  .header-menu-link {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: calc(16 / 12);
+    letter-spacing: 0.1em;
+
+    transition: color 500ms ease;
+  }
+
+  .header-menu-link:hover,
+  .header-menu-link:focus {
+    color: var(--accent-color);
+  }
+
+  .order-btn:hover,
+  .order-btn:focus {
+    background-color: var(--accent-color);
+  }
+}
+
+/* desktop */
+@media only screen and (min-width: 1200px) {
+  .header-contacts-tel {
+    display: block;
+    margin-left: auto;
+
+    transition: color 500ms ease;
+  }
+
+  .header-order-btn {
+    margin-left: 40px;
+  }
+  .header-contacts-tel:hover,
+  .header-contacts-tel:focus {
+    color: var(--accent-color);
+  }
+}
+
 /* ========== /HEADER ========== */
 
 /* ========== MAINE ========== */
